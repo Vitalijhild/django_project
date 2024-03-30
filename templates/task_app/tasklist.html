@@ -8,7 +8,7 @@
 <body>
     {% for task in tasks %}
 
-        <h1><a href="{% url 'task_detail' task_detail.pk %}">{{ task.task_name }}</a></h1>
+        <h1><a href="{% url 'task_detail' task.pk %}">{{ task.task_name }}</a></h1>
         <h2>{{ task.description }}</h2>
 
     {% endfor %}
