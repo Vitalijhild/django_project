@@ -1,0 +1,29 @@
+body{
+    
+    background-color: black;
+}
+.task{
+    border-radius: 10px;
+    padding: 25px;
+    margin: 10px;
+    background-color: #f4f6fb;
+    box-shadow: 0 3px 8px rgba(0,0,0,.1);
+    color:#7a7e80
+}
+.add-task-form{
+    border-radius: 10px;
+    padding: 25px;
+    margin: 10px;
+    background-color: #f4f6fb;
+    box-shadow: 0 3px 8px rgba(0,0,0,.1);
+    color:#7a7e80
+}
+
+.task-details{
+    border-radius: 10px;
+    padding: 25px;
+    margin: 10px;
+    background-color: #f4f6fb;
+    box-shadow: 0 3px 8px rgba(0,0,0,.1);
+    color:#7a7e80
+}

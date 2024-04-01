@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>{{ task.task_name }}</h1>
-    <h3>{{ task.description }}</h3>
-    <hr>
-    <h2> Термін виконання </h2>
-    <p>{{ task.date_start }}</p>
-    <p>{{ task.date_finished }}</p>
-</body>
-</html>
+{% extends "task_app/base.html" %}
+{% block content %}
+    <section class="task-details">
+
+        <h1>{{ task.task_name }}</h1>
+        <h3>{{ task.description }}</h3>
+        <hr>
+        <h2> Термін виконання </h2>
+        <p>з {{ task.date_start }}</p>
+        <p>до {{ task.date_finished }}</p>
+    </section>
+{% endblock content %}

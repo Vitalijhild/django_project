@@ -5,7 +5,7 @@ class State(models.Model):
     name = models.CharField(max_length=25)
 
     def __str__(self):
-        return str()
+        return str(self.name)
 
 class Preoretis(models.Model):
     name = models.CharField(max_length=100)

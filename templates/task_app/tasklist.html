@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "task_app/base.html" %}
+{% block content %}
     {% for task in tasks %}
+        <section class="task">
 
-        <h1><a href="{% url 'task_detail' task.pk %}">{{ task.task_name }}</a></h1>
-        <h2>{{ task.description }}</h2>
-
+            <h1>{{ task.task_name }}</h1>
+            <h4>{{ task.description }}</h4>
+            <div><a href="{% url 'task_detail' task.pk %}">See more details...</a></div>
+            
+        </section>
     {% endfor %}
-</body>
-</html>
+{% endblock content %}
