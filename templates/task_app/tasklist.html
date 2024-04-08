@@ -1,12 +1,36 @@
 {% extends "task_app/base.html" %}
-{% block content %}
-    {% for task in tasks %}
-        <section class="task">
+{% load static %}
 
-            <h1>{{ task.task_name }}</h1>
-            <h4>{{ task.description }}</h4>
-            <div><a href="{% url 'task_detail' task.pk %}">See more details...</a></div>
+{% block connect_styles %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% endblock %}
+{% block content %}
+    <div>
+        <section class="filter-panel">
+                <form method="get">
+                    <h1>Search Tasks</h1>
+                    {{ form.status.label_tag }}
+                    <p>{{ form.status }}</p>
+                    <input type="submit" class="filter-set-btn">
+                </form>
+        </section>
+
+        <section>
+                
+            {% for task in tasks %}
+
+                <section class="task">
+
+                    <h1>{{ task.task_name }}</h1>
+                    <h4>{{ task.description }}</h4>
+                    <div><a href="{% url 'task_app:task_detail' task.pk %}">See more details...</a></div>
+                    
+                </section>
+            {% endfor %}
             
         </section>
-    {% endfor %}
+    </div>
+    
+    
 {% endblock content %}

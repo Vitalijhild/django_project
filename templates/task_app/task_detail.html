@@ -1,4 +1,10 @@
+
 {% extends "task_app/base.html" %}
+{% load static %}
+{% block connect_styles %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% endblock %}
 {% block content %}
     <section class="task-details">
 
@@ -8,5 +14,7 @@
         <h2> Термін виконання </h2>
         <p>з {{ task.date_start }}</p>
         <p>до {{ task.date_finished }}</p>
+        <a href="/">back to list</a>
+        <a href="{% url 'task_app:task_update' task.pk %}">edit the task</a>
     </section>
 {% endblock content %}

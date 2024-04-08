@@ -1,9 +1,19 @@
 {% extends "task_app/base.html" %}
+{% load static %}
+
+{% block connect_styles %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% endblock %}
 {% block content %}
     <form method="post" class="add-task-form">
-        <h1>Create Task</h1>
+        <h1>Update Task</h1>
         {% csrf_token %}
         {{ form.as_p }}
+        
         <button type="submit">Submit</button>
+        <a href="/">back to list</a>
+
     </form>
+
 {% endblock content %}
